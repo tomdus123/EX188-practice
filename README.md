@@ -3,7 +3,7 @@ This set of sample files started out as a direct clone of [the work by FWSquatch
 
 Their last update to the project was in March of 2021, with the sample exam environment based on ContOS 7. 
 
-In this fork, I am updating the environment to match todays RHEL8-based EX188 exam.
+In this fork, I am updating the environment to match todays RHEL8-based [EX188 exam](https://www.redhat.com/en/services/training/ex188-red-hat-certified-specialist-containers-exam?section=what-you-need-to-know).
 
 
 ## License
@@ -22,7 +22,7 @@ Once you have finished those tasks, [continue with my own extra assignments](./A
 
 
 ## Installation
-1. Install vagrant and virtualbox.
+1. Install [vagrant](https://developer.hashicorp.com/vagrant/downloads) and virtualbox.
 2. Clone this repo: `git clone https://github.com/Unixerius/EX188-practice`
 3. Change into the newly created directory: `cd EX188-practice`
 4. Fire up the VMs: `vagrant up`

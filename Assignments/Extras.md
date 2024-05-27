@@ -82,3 +82,33 @@ The Stack consists of five services:
 * The "worker" container depends on both "db" and "redis". 
 
 
+## Task 11
+
+Create multi stage builds ....
+# First stage
+FROM registry.access.redhat.com/ubi8/nodejs-14:1 as builder
+COPY ./ /opt/app-root/src/
+RUN npm install
+RUN npm run build
+# Second stage
+FROM registry.access.redhat.com/ubi8/nginx-120
+COPY --from=builder --chown=username /opt/app-root/src/ /usr/share/nginx/html
+
+
+[user@host ~]$ podman run -p 8080:8080 --volume /www:/var/www/html:ro \
+registry.access.redhat.com/ubi8/httpd-24:latest
+
+podman unshare ls -l /www/
+[user@host ~]$ podman run -p 8080:8080 --volume /www:/var/www/html:Z \
+registry.access.redhat.com/ubi8/httpd-24:latest
+
+[user@host ~]$ ls -Zd /www
+system_u:object_r:container_file_t:s0:c240,c717 /www
+
+podman volume import http_data web_data.tar.gz
+podman volume export http_data --output web_data.tar.gz
+
+podman run -d --name python-server -p 8000:8000 -v /home/tomas/git/EX188-practice/tomas-private/www:/server podman-python-server
+
+
+LESEN BIS SEITE 153::: Stateful Database Containers
