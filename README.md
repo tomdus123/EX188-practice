@@ -1,5 +1,5 @@
 # Introduction
-This set of sample files started out as a direct clone of [the work by FWSquatch](https://github.com/FWSquatch/do180-practice). 
+This set of sample files started out as a direct clone of [the work by FWSquatch](https://github.com/FWSquatch/do180-practice) and https://github.com/iWhacko/EX188-practice/
 
 Their last update to the project was in March of 2021, with the sample exam environment based on ContOS 7. 
 
